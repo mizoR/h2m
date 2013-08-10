@@ -22,9 +22,9 @@ html
       form.pure-form.pure-form-stacked action='/' method='POST'
         fieldset
           label for='html' HTML
-          textarea.pure-input-1 name='html' rows=15 #{{@html}}
+          textarea.pure-input-1 name='html' rows=15 #{@html}
           button class='pure-button pure-button-primary' Convert to Markdown
       - if @markdown
         form.pure-form.pure-form-stacked
           label for='markdown' Markdown
-          textarea.pure-input-1 name='markdown' rows=15 readonly='' #{{@markdown}}
+          textarea.pure-input-1 name='markdown' rows=15 readonly='' #{@markdown}
