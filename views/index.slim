@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    title Converting HTML to Markdown
+    link rel='stylesheet' type='text/css' href='http://yui.yahooapis.com/pure/0.2.1/pure-min.css'
+    link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Fauna+One'
+    style type='text/css'
+      |
+        body {
+          width: 70%;
+          margin: 0 auto;
+        }
+        h1 {
+          text-align: center;
+          font-family: 'Fauna One', serif;
+        }
+  body
+    .header
+      h1 Converting HTML to Markdown 
+    .content
+      form.pure-form.pure-form-stacked action='/' method='POST'
+        fieldset
+          label for='html' HTML
+          textarea.pure-input-1 name='html' rows=15 #{{@html}}
+          button class='pure-button pure-button-primary' Convert to Markdown
+      - if @markdown
+        form.pure-form.pure-form-stacked
+          label for='markdown' Markdown
+          textarea.pure-input-1 name='markdown' rows=15 readonly='' #{{@markdown}}
