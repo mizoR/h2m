@@ -27,7 +27,7 @@ GEM
       rack
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    reverse_markdown (0.4.4)
+    reverse_markdown (0.4.5)
       nokogiri
     rubyzip (0.9.9)
     sinatra (1.4.3)
