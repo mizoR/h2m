@@ -10,7 +10,7 @@ class App < Sinatra::Base
   end
 
   post '/' do
-    @html = params[:html]
+    @html = params[:html].gsub("\r\n", "\n")
     @markdown = ReverseMarkdown.parse @html, :github_style_code_blocks => true
     slim :index
   end
