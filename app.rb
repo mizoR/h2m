@@ -20,5 +20,19 @@ class App < Sinatra::Base
     html = request.body.read
     ReverseMarkdown.parse html, :github_style_code_blocks => true
   end
+
+  post '/csv2ascii' do
+    request.body.rewind
+    csv = request.body.read
+    table = CSV.parse(csv, :col_sep => ',', :headers => true)
+    table.to_ascii
+  end
+
+  post '/tsv2ascii' do
+    request.body.rewind
+    tsv = request.body.read
+    table = CSV.parse(tsv, :col_sep => "\t", :headers => true)
+    table.to_ascii
+  end
 end
 
